@@ -178,6 +178,7 @@ inner join SMGR.T_CONT r
 on t.cont_id = r.CONT_ID
 inner join SMGR.T_CONT_CRIT_DT x
 on x.cont_id = r.cont_id
+
 where x.crit_dt_t = 'FREL'
 and substr(x.actl_dt,1,4) > 0
 and t.beg_termini not like '%..%'
@@ -298,6 +299,7 @@ inner join SMGR.T_CONT s
 on i.cont_id = s.cont_id
 inner join SMGR.T_CONT_CRIT_DT x
 on x.cont_id = s.cont_id
+
 where x.crit_dt_t = 'FREL'
 and substr(x.actl_dt,1,4) > 0 
 and i.fed_st_prj_nbr not like '%SF%' 
