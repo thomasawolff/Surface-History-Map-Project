@@ -52,11 +52,11 @@ inner join SMGR.T_CONT x -- Primary key = cont_id
 on d.cont_id = x.cont_id
 order by 1
 ;
-alter table as_built_mix add primary key(cont_id,prim_prj_nbr,MIX_ID)
+alter table cont_id_prj_table add primary key(cont_id,prim_prj_nbr,MIX_ID)
 ;
 
 create table CONT_CRIT_DT_TABLE as
-select t.cont_id,t.crit_dt_t,t.actl_dt 
+select t.cont_id,t.actl_dt 
 from SMGR.T_CONT_CRIT_DT t
 where t.crit_dt_t = 'FREL'
 and substr(t.actl_dt,1,4) > 0
