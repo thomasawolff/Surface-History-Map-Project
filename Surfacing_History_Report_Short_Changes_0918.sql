@@ -1,5 +1,5 @@
 --create or replace view surface_history_cleaner as
-----------------------------------***********************************************---------------------------------Excel Data from Chris Lang
+----------------------------------***********************************************-----------------------------Excel Data from Chris Lang
 
 select t.year_,
 t.corridor,
@@ -310,8 +310,6 @@ on w.sliced = b.sliced
 inner join CONT_CRIT_DT_TABLE x -- Primary key = cont_id
 on i.cont_id = x.CONT_ID
 
-where x.crit_dt_t = 'FREL'
-and substr(x.actl_dt,1,4) > 0 
 and i.fed_st_prj_nbr not like '%SF%' 
 and i.fed_st_prj_nbr not like '%HSIP%'
 and i.desc1 not like '%BRIDGE%'
