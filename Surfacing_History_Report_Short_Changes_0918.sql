@@ -1,4 +1,6 @@
+
 create or replace view surface_history_cleaner as
+
 ----------------------------------***********************************************-----------------------------Excel Data from Chris Lang
 
 select t.year_,
