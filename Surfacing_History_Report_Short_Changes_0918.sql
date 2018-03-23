@@ -396,6 +396,7 @@ t.design_rice
 having abs(t.project_end-t.project_start) > 0 
 and abs(t.project_end-t.project_start) <= 20
 order by t.corridor,t.project_start
-
 ;
+
+----------------------------------***********************************************-----------------------------
 
