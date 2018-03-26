@@ -41,6 +41,7 @@ from SURFACE_HISTORY_CLEANER t left join corridors_table s
 on t.CORRIDOR = s.nrlg_dept_route
 where t.year_ >= (select (max(t.year_)) from SURFACE_HISTORY_CLEANER t
                   where t.year_ <= extract(year from sysdate) - 10)
+                  
 group by abs(t.project_end-t.project_start),
 t.year_,t.corridor,s.corridor_rb,t.PROJECT_NUMBER,t.project_name,t.DESCRIPTION_,
 t.mix_id,t.contract_id,t.project_start,t.project_end,
@@ -63,6 +64,7 @@ t.design_vfa,
 t.Design_Bulk_Gravity,
 t.Design_Comp_LBS_Per_CY,
 t.design_rice
+
 having abs(t.project_end-t.project_start) > 0 
 and abs(t.project_end-t.project_start) <= 20
 order by t.corridor,t.project_start
