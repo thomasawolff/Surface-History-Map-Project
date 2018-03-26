@@ -15,10 +15,6 @@ cast(t.project_start as numeric(10,1)) as "PROJECT START",
 cast(t.project_end as numeric(10,1)) as  "PROJECT END",
 t.control_number as "CONTROL NUMBER",
 cast(t.esals as number) as "ESALS",
-case when t.AS_BUILT_AC = ' '
-  then NULL
-    else cast(t.AS_BUILT_AC as numeric(10,2)) 
-      end as "AS BUILT AC",
 t.AS_BUILT_AGGREGATE_SIZE as "AS BUILT AGGREGATE SIZE",
 t.as_built_hamburg_voids as "AS BUILT HAMBURG VOIDS",
 t.as_built_vma as "AS BUILT VMA",
