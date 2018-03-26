@@ -1,11 +1,5 @@
 select abs(t.project_end-t.project_start) as LENGTH_,
 cast(t.year_ as number) as YEAR_,
-case when t.CORRIDOR not like s.corridor_rb then s.corridor_rb
-     when t.CORRIDOR like 'C000090' then 'C000090N'
-     when t.CORRIDOR like 'C000015' then 'C000015E'
-     when t.CORRIDOR like 'C000094' then 'C000094E'
-       else t.CORRIDOR
-            end as CORRIDOR,
 t.PROJECT_NUMBER as PROJECT_NUMBER,
 t.project_name as PROJECT_NAME,
 t.DESCRIPTION_ as DESCRIPTION_,
@@ -15,10 +9,6 @@ cast(t.project_start as numeric(10,1)) as PROJECT_START,
 cast(t.project_end as numeric(10,1)) as  PROJECT_END,
 t.control_number as CONTROL_NUMBER,
 cast(t.esals as number) as ESALS,
-case when t.AS_BUILT_AC = ' '
-  then NULL
-    else cast(t.AS_BUILT_AC as numeric(10,2)) 
-      end as AS_BUILT_AC,
 t.AS_BUILT_AGGREGATE_SIZE as AS_BUILT_AGGREGATE_SIZE,
 t.as_built_hamburg_voids as AS_BUILT_HAMBURG_VOIDS,
 t.as_built_vma as AS_BUILT_VMA,
