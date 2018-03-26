@@ -1,11 +1,5 @@
 select abs(t.project_end-t.project_start) as "LENGTH",
 cast(t.year_ as number) as "YEAR",
-case when t."CORRIDOR" not like s.corridor_rb then s.corridor_rb
-     when t."CORRIDOR" like 'C000090' then 'C000090N'
-     when t."CORRIDOR" like 'C000015' then 'C000015E'
-     when t."CORRIDOR" like 'C000094' then 'C000094E'
-       else t."CORRIDOR"
-            end as CORRIDOR,
 t.PROJECT_NUMBER as "PROJECT NUMBER",
 t.project_name as "PROJECT NAME",
 t.DESCRIPTION_ as "DESCRIPTION",
