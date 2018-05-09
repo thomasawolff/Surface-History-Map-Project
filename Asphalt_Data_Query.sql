@@ -1,3 +1,5 @@
+---------------------------------------***********************************-----------------------------------
+
 create or replace view surface_history_cleaner2 as
 select DISTINCT 
 --t.qp_mdt_uid,t.qp_mdt_fk,
@@ -228,8 +230,7 @@ cast(t.design_vfa as numeric(10,1)) as DESIGN_VFA,
 cast(t.Design_Bulk_Gravity as numeric(10,3)) as DESIGN_BULK_GRAVITY,
 cast(t.Design_Comp_LBS_Per_CY as number) as DESIGN_COMP_LBS_PER_CY,
 cast(t.design_rice as numeric(10,3)) as design_rice
-from SURFACE_HISTORY_CLEANER2 t /*left join corridors_table s
-on cast(regexp_replace(nvl(substr(t.CORRIDOR,0,instr(t.CORRIDOR,',')-1),t.CORRIDOR),'[^0-9]','')as int) = s.sliced
+from SURFACE_HISTORY_CLEANER2 t 
 
 where t.year_ >= (select (max(t.year_)) from SURFACE_HISTORY_CLEANER2 t
                   where t.year_ <= extract(year from sysdate) - 10)
